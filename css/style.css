@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    --yellow: #FCDD26;
+    --gray: #333;
+    --ligth-gray: #666;
+}
+* {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: all .3s linear;
+}
+*::selection {
+    background: var(--gray);
+    color: var(--yellow);
+}
+
+html::-webkit-scrollbar {
+    width: 1.2rem;
+}
+html::-webkit-scrollbar-track {
+    background: var(--gray);
+}
+html::-webkit-scrollbar-thumb {
+    background: var(--yellow);
+    border-radius: .5rem;
+}
+section {
+    padding: 1rem 5%;
+}
+.btn {
+    background: var(--yellow);
+    color: var(--gray);
+    font-size: 1.5rem;
+    padding: .7rem 2.5rem;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    display: inline-block;
+    cursor: pointer;
+}
+.btn:hover {
+    color: var(--yellow);
+    background-color: var(--gray);
+}
+.heading {
+    text-align: center;
+    padding: 1rem;
+    color: var(--gray);
+    font-size: 2.5rem;
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, .1);
+}
+.heading i {
+    color: var(--yellow);
+    padding: 0 .5rem;
+}
+/*====================== HEADER ====================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+    position: relative;
+}
+header #menu {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+header #menu:hover {
+    color: var(--yellow);
+}
+header .logo {
+    font-size: 2rem;
+    color: var(--gray);
+}
+header .logo i {
+    color: var(--yellow);
+    transform: rotate(-65deg);
+}
+header .navbar a {
+    color: var(--gray);
+    font-size: 1.5rem;
+    padding: 0 1rem;
+}
+header .navbar a:hover {
+    color: var(--yellow);
+}
+header .icons i {
+    font-size: 1.5rem;
+    color: var(--gray);
+    cursor: pointer;
+    margin: 0 .5rem;
+}
+header .icons i:hover {
+    color: var(--yellow);
+}
+header .search_bar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--yellow);
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+header .search_bar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+header .search_bar input {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    text-transform: none;
+}
+header .search_bar input::placeholder {
+    text-transform: capitalize;
+}
+header .search_bar label {
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    color: var(--gray);
+}
+
+
+/*====================== HOME ====================== */
+
+.home {
+    background: url(../images/home-bg.webp);
+    height: 75vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+.home .content span {
+    font-size: 2rem;
+    color: var(--gray);
+}
+.home .content h3 {
+    color: var(--gray);
+    font-size: 5rem;
+}
+
+/*====================== CATEGORY ====================== */
+
+.category .inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.category .inner .box {
+    width: 24%;
+    text-align: center;
+    box-shadow: 0 .5rem .6rem rgba(0, 0, 0, .1);
+    padding: 1.5rem 0;
+    border-radius: .5rem;
+}
+.category .inner .box img {
+    width: 100%;
+}
+.category .inner .box h3 {
+    font-size: 1.5rem;
+    color: var(--gray);
+    padding-bottom: .5rem;
+}
+
+/*====================== FEATURED ====================== */
+
+.featured .inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.featured .inner .box {
+    width: 49%;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.featured .inner .box .price {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 6rem;
+    height: 6rem;
+    background: var(--yellow);
+    border-radius: 50%;
+    color: var(--gray);
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 6rem;
+}
+.featured .inner .box img {
+    width: 17rem;
+}
+.featured .inner .box .content {
+    padding: 1rem;
+}
+.featured .inner .box .content .stars i {
+    font-size: 1.5rem;
+    color: var(--yellow);
+}
+.featured .inner .box .content h3 {
+    color: var(--gray);
+    font-size: 2rem;
+}
+.featured .inner .box .content p {
+    color: var(--ligth-gray);
+    font-size: 1.3rem;
+    margin-bottom: .5rem;
+}
+
+/*====================== DEAL ====================== */
+
+.deal {
+    background-image: url(../images/deal-bg.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.deal span {
+    color: var(--gray);
+    font-size: 2rem;
+}
+.deal h3 {
+    color: #fff;
+    font-size: 4rem;
+}
+
+/*====================== PRODUCTS ====================== */
+
+.products .inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.products .inner .box {
+    width: 24%;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.products .inner .box img {
+    width: 10rem;
+}
+.products .inner .box .content {
+    padding: .5rem;
+}
+.products .inner .box .content .stars i {
+    font-size: 1rem;
+    color: var(--yellow);
+}
+.products .inner .box .content h3 {
+    font-size: 1.5rem;
+    color: var(--gray);
+}
+.products .inner .box .content .price {
+    font-size: 1.2rem;
+    color: var(--ligth-gray);
+}
+.products .inner .box .content .price span {
+    font-size: 1rem;
+    text-decoration: line-through;
+}
+.products .inner .box .content .btn {
+    font-size: 1rem;
+    padding: .5rem;
+}
+
+/* ======================= OFFER ================================ */
+
+.offer .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.offer .inner .box {
+    width: 49%;
+    position: relative;
+}
+.offer .inner .box img {
+    width: 100%;
+}
+.offer .inner .box .content {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    color: var(--gray);
+}
+.offer .inner .box .content span {
+    font-size: 1.5rem;
+}
+.offer .inner .box .content h3 {
+    font-size: 2rem;
+}
+.offer .inner .box .content .btn {
+    background: #fff;
+}
+
+/* ======================= CONTACT ================================ */
+
+.contact {
+    background: url(../images/contact-bg.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: none;
+}
+.contact .heading i {
+    color: #fff;
+}
+.contact form {
+    text-align: center;
+}
+.contact form .inputBox {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contact form .inputBox input {
+    width: 49%;
+    margin: .5rem 0;
+    font-size: 1.5rem;
+    color: var(--gray);
+    text-transform: none;
+    padding: .8rem;
+    border-radius: .5rem;
+}
+.contact form textarea {
+    width: 100%;
+    resize: none;
+    margin: .5rem 0;
+    border-radius: .5rem;
+    padding: .8rem;
+    font-size: 1rem;
+    color: var(--gray);
+    text-transform: none;
+}
+.contact form .inputBox input::placeholder {
+    text-transform: capitalize;
+}
+.contact form .btn {
+    background: #fff;
+}
+.contact form .btn:hover {
+    background: var(--gray);
+}
+/* ======================= FOOTER ================================ */
+
+.footer .share {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.footer .share a{
+    width: 2rem;
+    height: 2rem;
+    background: var(--ligth-gray);
+    margin: .5rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2rem;
+}
+.footer .share a i{
+    color: #fff;
+}
+.footer .share a:hover {
+    background: var(--yellow);
+}
+.footer .author {
+    text-align: center;
+    color: var(--ligth-gray);
+}
+.footer .author span {
+    color: var(--yellow);
+}
+
+@media (min-width: 1200px) {
+    .featured .inner .box .price {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1rem;
+        line-height: 4rem;
+    }
+}
+@media (max-width: 1200px) {
+    .featured .inner .box {
+        width: 98%;
+    }
+    .products .inner .box {
+        width: 49%;
+    }
+}
+@media (max-width: 970px) {
+    header .navbar a {
+        font-size: 1.2rem;
+    }
+    .home .content h3 {
+        font-size: 3.5rem;
+    }
+    .deal h3 {
+        font-size: 3rem;
+    }
+    .deal span {
+        font-size: 1.8rem;
+    }
+    .offer .inner .box .content h3 {
+        font-size: 1.9rem;
+    }
+    .offer .inner .box .content .btn {
+        font-size: 1.2rem;
+        padding: .2rem 1rem;
+    }
+}
+@media (max-width: 950px) {
+    .category .inner .box h3 {
+        font-size: 1.2rem;
+    }
+    .category .inner .box .btn {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 890px) {
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        background: #fff;
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    header .navbar a {
+        display: block;
+        font-size: 1.6rem;
+    }
+    header #menu {
+        display: block;
+        font-size: 1.5rem;
+    }
+    .home .content h3 {
+        font-size: 2rem;
+    }
+    .category .inner .box {
+        width: 48%;
+    }
+    .category .inner .box h3 {
+        font-size: 1.5rem;
+    }
+    .category .inner .box .btn {
+        font-size: 1.5rem;
+    }
+    .products .inner .box {
+        width: 80%;
+    }
+    .deal h3 {
+        font-size: 2.5rem;
+    }
+    .offer .inner .box .content h3 {
+        font-size: 1.2rem;
+    }
+}
